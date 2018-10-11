@@ -16,17 +16,17 @@ namespace SimpleTaskSystem.Web
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
-                        "Home",
-                        new LocalizableString("HomePage", SimpleTaskSystemConsts.LocalizationSourceName),
+                        "TaskList",
+                        new LocalizableString("TaskList", SimpleTaskSystemConsts.LocalizationSourceName),
                         url: "#/",
-                        icon: "fa fa-home"
+                        icon: "fa fa-tasks"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
-                        "About",
-                        new LocalizableString("About", SimpleTaskSystemConsts.LocalizationSourceName),
-                        url: "#/about",
-                        icon: "fa fa-info"
+                        "NewTask",
+                        new LocalizableString("NewTask", SimpleTaskSystemConsts.LocalizationSourceName),
+                        url: "#!/new",
+                        icon: "fa fa-asterisk"
                         )
                 );
         }

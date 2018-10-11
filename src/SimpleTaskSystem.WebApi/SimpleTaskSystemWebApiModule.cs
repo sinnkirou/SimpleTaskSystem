@@ -14,7 +14,7 @@ namespace SimpleTaskSystem
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
             Configuration.Modules.AbpWebApi().DynamicApiControllerBuilder
-                .ForAll<IApplicationService>(typeof(SimpleTaskSystemApplicationModule).Assembly, "app")
+                .ForAll<IApplicationService>(typeof(SimpleTaskSystemApplicationModule).Assembly, "tasksystem")
                 .Build();
         }
     }

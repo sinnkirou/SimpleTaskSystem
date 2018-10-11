@@ -14,22 +14,19 @@
 
     //Configuration for Angular UI routing.
     app.config([
-        '$stateProvider', '$urlRouterProvider', '$locationProvider', '$qProvider',
-        function ($stateProvider, $urlRouterProvider, $locationProvider, $qProvider) {
-            $locationProvider.hashPrefix('');
+        '$stateProvider', '$urlRouterProvider',
+        function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
-            $qProvider.errorOnUnhandledRejections(false);
-
             $stateProvider
-                .state('home', {
+                .state('tasklist', {
                     url: '/',
-                    templateUrl: '/App/Main/views/home/home.cshtml',
-                    menu: 'Home' //Matches to name of 'Home' menu in SimpleTaskSystemNavigationProvider
+                    templateUrl: '/App/Main/views/task/list.cshtml',
+                    menu: 'TaskList' //Matches to name of 'TaskList' menu in SimpleTaskSystemNavigationProvider
                 })
-                .state('about', {
-                    url: '/about',
-                    templateUrl: '/App/Main/views/about/about.cshtml',
-                    menu: 'About' //Matches to name of 'About' menu in SimpleTaskSystemNavigationProvider
+                .state('newtask', {
+                    url: '/new',
+                    templateUrl: '/App/Main/views/task/new.cshtml',
+                    menu: 'NewTask' //Matches to name of 'NewTask' menu in SimpleTaskSystemNavigationProvider
                 });
         }
     ]);

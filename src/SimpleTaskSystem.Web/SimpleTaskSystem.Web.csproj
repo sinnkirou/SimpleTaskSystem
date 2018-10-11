@@ -392,8 +392,8 @@
     </Content>
     <Content Include="App\Main\views\layout\header.js" />
     <Content Include="App\Main\views\layout\layout.js" />
-    <Content Include="App\Main\views\home\home.js" />
-    <Content Include="App\Main\views\about\about.js" />
+    <Content Include="App\Main\views\tasks\list.js" />
+    <Content Include="App\Main\views\tasks\new.js" />
     <Content Include="Content\bootstrap-cosmo.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -457,8 +457,6 @@
     <Content Include="Localization\SimpleTaskSystem\SimpleTaskSystem.xml" />
     <Content Include="App\Main\main.less" />
     <Content Include="App\Main\views\layout\layout.cshtml" />
-    <Content Include="App\Main\views\home\home.cshtml" />
-    <Content Include="App\Main\views\about\about.cshtml" />
     <Content Include="App\Main\web.config" />
     <Content Include="log4net.config" />
     <Content Include="App\Main\views\layout\header.cshtml" />
@@ -545,6 +543,8 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="App\Main\views\tasks\list.cshtml" />
+    <Content Include="App\Main\views\tasks\new.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />

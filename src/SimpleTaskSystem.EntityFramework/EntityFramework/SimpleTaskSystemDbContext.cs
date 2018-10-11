@@ -1,14 +1,16 @@
 ﻿using System.Data.Common;
+using System.Data.Entity;
 using Abp.EntityFramework;
+using SimpleTaskSystem.Persons;
+using SimpleTaskSystem.Tasks;
 
 namespace SimpleTaskSystem.EntityFramework
 {
     public class SimpleTaskSystemDbContext : AbpDbContext
     {
-        //TODO: Define an IDbSet for each Entity...
+        public virtual IDbSet<Task> Tasks { get; set; }
 
-        //Example:
-        //public virtual IDbSet<User> Users { get; set; }
+        public virtual IDbSet<Person> People { get; set; }
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.

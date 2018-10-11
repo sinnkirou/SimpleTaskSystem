@@ -1,11 +1,7 @@
 ﻿using Abp.Domain.Entities;
 using SimpleTaskSystem.Persons;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleTaskSystem.Tasks
 {
@@ -31,7 +27,7 @@ namespace SimpleTaskSystem.Tasks
 
     public enum TaskState : byte
     {
-        Active = 0,
-        Completed = 1
+        Active = 1,
+        Completed = 2
     }
 }

@@ -17,7 +17,6 @@ namespace SimpleTaskSystem
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
-            Database.SetInitializer<SimpleTaskSystemDbContext>(null);
         }
     }
 }

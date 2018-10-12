@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Web", "Sim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.WebApi", "SimpleTaskSystem.WebApi\SimpleTaskSystem.WebApi.csproj", "{5EB52D3D-09FD-463A-B02A-8D9856BD3724}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTaskSystem.Test", "SimpleTaskSystem.Test\SimpleTaskSystem.Test.csproj", "{13A8DF86-D72E-4EF1-A926-EF0401879C85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13A8DF86-D72E-4EF1-A926-EF0401879C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A8DF86-D72E-4EF1-A926-EF0401879C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A8DF86-D72E-4EF1-A926-EF0401879C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A8DF86-D72E-4EF1-A926-EF0401879C85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

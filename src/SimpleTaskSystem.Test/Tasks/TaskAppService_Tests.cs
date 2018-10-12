@@ -1,4 +1,5 @@
-﻿using Shouldly;
+﻿using Abp.Runtime.Validation;
+using Shouldly;
 using SimpleTaskSystem.Persons;
 using SimpleTaskSystem.Tasks;
 using SimpleTaskSystem.Tasks.Dtos;
@@ -45,6 +46,62 @@ namespace SimpleTaskSystem.Test.Tasks
                 var task2 = context.Tasks.FirstOrDefault(t => t.Description == "my test task 2");
                 task2.ShouldNotBe(null);
                 task2.AssignedPersonId.ShouldBe(thomasMore.Id);
+            });
+        }
+
+        [Fact]
+        public void Should_Not_Create_Task_Without_Description()
+        {
+            //Description is not set
+            Assert.Throws<AbpValidationException>(() => _taskAppService.CreateTask(new CreateTaskInput()));
+        }
+
+        //Trying to assign a task of Isaac Asimov to Thomas More
+        [Fact]
+        public void Should_Change_Assigned_People()
+        {
+            //We can work with repositories instead of DbContext
+            var taskRepository = LocalIocManager.Resolve<ITaskRepository>();
+
+            //Obtain test data
+            var isaacAsimov = GetPerson("Isaac Asimov");
+            var thomasMore = GetPerson("Thomas More");
+            var targetTask = taskRepository.FirstOrDefault(t => t.AssignedPersonId == isaacAsimov.Id);
+            targetTask.ShouldNotBe(null);
+
+            //Run SUT
+            _taskAppService.UpdateTask(
+                new UpdateTaskInput
+                {
+                    TaskId = targetTask.Id,
+                    AssignedPersonId = thomasMore.Id
+                });
+
+            //Check result
+            taskRepository.Get(targetTask.Id).AssignedPersonId.ShouldBe(thomasMore.Id);
+        }
+
+        [Fact]
+        public void Should_Change_Assigned_People_WithDbContext()
+        {
+            //Obtain test data
+            var isaacAsimov = GetPerson("Isaac Asimov");
+            var thomasMore = GetPerson("Thomas More");
+            var targetTask = UsingDbContext(context => context.Tasks.FirstOrDefault(t => t.AssignedPersonId == isaacAsimov.Id));
+            targetTask.ShouldNotBe(null);
+
+            //Run SUT
+            _taskAppService.UpdateTask(
+                new UpdateTaskInput
+                {
+                    TaskId = targetTask.Id,
+                    AssignedPersonId = thomasMore.Id
+                });
+
+            //Check result
+            UsingDbContext(context =>
+            {
+                context.Tasks.FirstOrDefault(t => t.Id == targetTask.Id).AssignedPersonId.ShouldBe(thomasMore.Id);
             });
         }
 

@@ -218,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InitialData\SimpleTaskSystemInitialDataBuilder.cs" />
+    <Compile Include="Persons\PersonAppService_Tests.cs" />
     <Compile Include="SimpleTaskSystemTestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleTaskSystemTestModule.cs" />
@@ -244,9 +245,7 @@
       <Name>SimpleTaskSystem.EntityFramework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persons\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

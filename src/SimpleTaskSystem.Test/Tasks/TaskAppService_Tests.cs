@@ -105,6 +105,13 @@ namespace SimpleTaskSystem.Test.Tasks
             });
         }
 
+        [Fact]
+        public void Should_Get_All_Tasks()
+        {
+            var output = _taskAppService.GetTasks(new GetTasksInput());
+            output.Tasks.Count.ShouldBe(4);
+        }
+
         private Person GetPerson(string name)
         {
             return UsingDbContext(context => context.People.Single(p => p.Name == name));
